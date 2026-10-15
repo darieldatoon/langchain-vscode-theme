@@ -1,0 +1,59 @@
+{
+  "name": "langchain-vscode-theme",
+  "displayName": "LangChain Theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Light and dark themes generated from LangChain's Macaw design system tokens.",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "dark",
+    "langchain",
+    "light",
+    "macaw",
+    "theme"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darieldatoon/langchain-vscode-theme.git"
+  },
+  "publisher": "darieldatoon",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate.ts",
+    "check": "mise run check",
+    "test": "vitest run",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@langchain/macaw-tokens": "1.0.0-beta.8",
+    "@types/node": "^24.19.2",
+    "@vscode/test-web": "0.0.81",
+    "@vscode/vsce": "4.0.0",
+    "oxfmt": "0.73.0",
+    "oxlint": "1.88.0",
+    "playwright": "1.64.1",
+    "typescript": "~5.9.3",
+    "vitest": "5.0.4"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "LangChain Light",
+        "uiTheme": "vs",
+        "path": "./themes/langchain-light.json"
+      },
+      {
+        "label": "LangChain Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/langchain-dark.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "packageManager": "pnpm@12.5.1"
+}

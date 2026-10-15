@@ -1,0 +1,19 @@
+.DS_Store
+
+# Dependencies and build output
+node_modules/
+*.vsix
+coverage/
+*.log
+
+# Local environments and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+
+# VS Code for the web builds and raw screenshots
+.vscode-test-web/

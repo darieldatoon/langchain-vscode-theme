@@ -1,0 +1,8 @@
+allowBuilds:
+  # Chromium is fetched by `mise run screenshots` instead, only when needed.
+  '@playwright/browser-chromium': false
+  # Its postinstall fetches a signing binary that only Marketplace publishing uses.
+  '@vscode/vsce-sign': false
+# Macaw ships betas that a theme update should not wait a day for; exclude only the exact version.
+minimumReleaseAgeExclude:
+  - '@langchain/macaw-tokens@1.0.0-beta.8'

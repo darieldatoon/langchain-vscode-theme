@@ -1,0 +1,39 @@
+# The only prerequisite is mise: `mise trust && mise install && mise run setup`.
+
+[tools]
+node = "24"
+pnpm = "12"
+lefthook = "2"
+"github:SocketDev/sfw-free" = { version = "1.15.2", bin = "sfw" }
+
+[settings]
+lockfile = true
+
+[tasks.setup]
+description = "Install dependencies through Socket Firewall, then git hooks"
+run = ["sfw pnpm install --frozen-lockfile", "lefthook install"]
+
+[tasks.generate]
+description = "Regenerate themes/*.json from the installed @langchain/macaw-tokens"
+run = "node src/generate.ts"
+
+[tasks.check]
+description = "Format check, lint, type check, and fail if themes/ is stale"
+run = [
+  "pnpm exec oxfmt --check .",
+  "pnpm exec oxlint",
+  "pnpm exec tsc",
+  "node src/generate.ts --check",
+]
+
+[tasks.test]
+description = "Unit tests"
+run = "pnpm exec vitest run"
+
+[tasks.package]
+description = "Build the .vsix (install it with `code --install-extension <file>`)"
+run = "pnpm exec vsce package --no-dependencies"
+
+[tasks.screenshots]
+description = "Regenerate docs/images/hero.png from VS Code for the web (needs Fira Code and Inter installed)"
+run = ["pnpm exec playwright install chromium", "node screenshots/capture.ts"]

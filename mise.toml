@@ -39,3 +39,10 @@ run = "pnpm exec vsce package --no-dependencies"
 [tasks.screenshots]
 description = "Regenerate docs/images/hero.png from VS Code for the web (needs Fira Code and Inter installed)"
 run = ["pnpm exec playwright install chromium", "node screenshots/capture.ts"]
+
+[tasks.icon]
+description = "Regenerate assets/icon.png, the Marketplace icon"
+run = [
+  "pnpm exec playwright install chromium",
+  "node screenshots/render-icon.ts",
+]

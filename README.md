@@ -2,8 +2,6 @@
 
 Light and dark VS Code themes generated from [Macaw](https://github.com/langchain-ai/macaw-design-system), LangChain's design system.
 
-Every color comes from `@langchain/macaw-tokens`, so the editor matches LangSmith and other Macaw products.
-
 ![LangChain Light and LangChain Dark, split diagonally, showing a LangGraph agent in Python beside a TypeScript client](docs/images/hero.png)
 
 ## Install
@@ -73,4 +71,5 @@ Review the `themes/*.json` diff, then merge. If the colors changed noticeably, r
 | `mise run check`       | Format, lint, type check, and fail on stale themes                      |
 | `mise run test`        | Unit and contrast tests                                                 |
 | `mise run package`     | Build the `.vsix`                                                       |
+| `mise run icon`        | Regenerate `assets/icon.png`                                            |
 | `mise run screenshots` | Regenerate `docs/images/hero.png` (needs Fira Code and Inter installed) |

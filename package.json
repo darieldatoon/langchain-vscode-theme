@@ -52,6 +52,7 @@
       }
     ]
   },
+  "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.90.0"
   },

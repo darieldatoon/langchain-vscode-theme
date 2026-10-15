@@ -8,6 +8,8 @@ lefthook = "2"
 
 [settings]
 lockfile = true
+# CI runs on Linux; `mise install --locked` fails for platforms missing here.
+lockfile_platforms = ["linux-x64", "linux-arm64", "macos-arm64", "macos-x64"]
 
 [tasks.setup]
 description = "Install dependencies through Socket Firewall, then git hooks"

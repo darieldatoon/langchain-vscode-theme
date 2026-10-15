@@ -46,3 +46,7 @@ run = [
   "pnpm exec playwright install chromium",
   "node screenshots/render-icon.ts",
 ]
+
+[tasks.release]
+description = "Bump the version (patch, minor or major), commit and tag it; push the tag to publish"
+run = 'npm version -m "chore: release v%s"'

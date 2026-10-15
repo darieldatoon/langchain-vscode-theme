@@ -6,7 +6,7 @@ Light and dark VS Code themes generated from [Macaw](https://github.com/langchai
 
 ## Install
 
-Download the `.vsix` from the latest CI run, or build it:
+Download the `.vsix` from the [latest release](https://github.com/darieldatoon/langchain-vscode-theme/releases/latest), or build it:
 
 ```sh
 mise trust && mise install && mise run setup
@@ -61,6 +61,15 @@ git commit -am "chore: regenerate themes" && git push
 ```
 
 Review the `themes/*.json` diff, then merge. If the colors changed noticeably, run `mise run screenshots` too.
+
+## Releasing
+
+```sh
+mise run release patch   # or minor / major: bumps package.json, commits, tags
+git push origin main --follow-tags
+```
+
+The tag starts `.github/workflows/release.yml`, which checks, tests, packages and publishes a GitHub release with the `.vsix` attached.
 
 ## Tasks
 
